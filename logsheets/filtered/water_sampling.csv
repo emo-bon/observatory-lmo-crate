@@ -69,26 +69,26 @@ EMO BON LMO 384 Wa 231204 0.2um (3),EMOBON metagenome water sample from station 
 EMO BON LMO 384 Wa 231204 0.2um (4),EMOBON metagenome water sample from station LMO collected on 2023-12-04 size fraction 0.2-3um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2023-12-04 00:00:00,LMO_Wa_231204,Danilo Di Leo; Kristofer Bergström,,no_tide,2,4,6,1,0.2-3,3,0.2,Y,Ruttner,WaSOP 1,peristaltic pump,2023-12-04 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,NA,,,,,,,,,,EMOBON_LMO_Wa_231204_0.2um_4
 EMO BON LMO 384 Wa 231204 3um (Blank),,,,,MilliQ water [ENVO:00003065],2023-12-04 00:00:00,LMO_Wa_231204,Camilla Karlsson,,no_tide,,blank,9,1,3,NA,3,N,NA,WaSOP 1,peristaltic pump,2023-12-04 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,NA,,,,,,,,,,EMOBON_LMO_Wa_231204_3um_blank
 EMO BON LMO 384 Wa 231204 0.2um (Blank),,,,,MilliQ water [ENVO:00003065],2023-12-04 00:00:00,LMO_Wa_231204,Camilla Karlsson,,no_tide,,blank,9,1,0.2-3,3,0.2,N,NA,WaSOP 1,peristaltic pump,2023-12-04 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,NA,,,,,,,,,,EMOBON_LMO_Wa_231204_0.2um_blank
-EMO BON LMO 387 Wa 240206 3um (1),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 3-200um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,1,9,1,3-200,200,3,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_3um_1
-EMO BON LMO 387 Wa 240206 3um (2),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 3-200um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,2,9,1,3-200,200,3,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_3um_2
-EMO BON LMO 387 Wa 240206 3um (3),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 3-200um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,3,9,1,3-200,200,3,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_3um_3
-EMO BON LMO 387 Wa 240206 3um (4),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 3-200um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,4,9,1,3-200,200,3,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_3um_4
-EMO BON LMO 387 Wa 240206 0.2um (1),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 0.2-3um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,1,9,1,0.2-3,3,0.2,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_0.2um_1
-EMO BON LMO 387 Wa 240206 0.2um (2),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 0.2-3um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,2,9,1,0.2-3,3,0.2,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_0.2um_2
-EMO BON LMO 387 Wa 240206 0.2um (3),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 0.2-3um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,3,9,1,0.2-3,3,0.2,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_0.2um_3
-EMO BON LMO 387 Wa 240206 0.2um (4),EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 0.2-3um,,,metagenome,seawater [ENVO:00002149]; surface water [ENVO:00002042],2024-02-06 00:00:00,LMO_Wa_240206,Danilo Di Leo; Kristofer Bergström,,no_tide,2,4,9,1,0.2-3,3,0.2,Y,Ruttner,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_0.2um_4
-EMO BON LMO 387 Wa 240206 3um (Blank),,,,metagenome,MilliQ water [ENVO:00003065],2024-02-06 00:00:00,LMO_Wa_240206,Camilla Karlsson,,no_tide,,blank,9,1,3,NA,3,N,NA,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_3um_blank
-EMO BON LMO 387 Wa 240206 0.2um (Blank),,,,metagenome,MilliQ water [ENVO:00003065],2024-02-06 00:00:00,LMO_Wa_240206,Camilla Karlsson,,no_tide,,blank,9,1,0.2-3,3,0.2,N,NA,WaSOP 1,peristaltic pump,2024-02-06 00:00:00,"EEMiS lab 4041a, J.Pinhassi freezer",-80,Camilla Karlsson,NA,Sabina Arnautovic,,,,,,,,,,,EMOBON_LMO_Wa_240206_0.2um_blank
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
-,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
 ,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
 ,EMOBON  water sample from station LMO collected on  size fraction um,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,EMOBON__um_
