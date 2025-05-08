@@ -1,56 +1,622 @@
 @prefix core_vocab: <https://data.emobon.embrc.eu/ns/core_vocab#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix emobon-core: <https://data.emobon.embrc.eu/ns/core#> .
+@prefix emobon-sampling: <https://data.emobon.embrc.eu/ns/sampling#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix mr: <http://marineregions.org/ns/ontology#> .
 @prefix ns1: <https://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix schema1: <http://schema.org/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <file:///github/workspace/ro-crate-metadata.json> a schema1:CreativeWork ;
     dct:conformsTo <https://w3id.org/ro/crate/1.1> ;
     schema1:about <file:///github/workspace/> .
 
-<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observatory/LMO> a emobon-core:Observatory ;
-    dct:isPartOf [ a schema:Project ;
-            emobon-core:enaProjAccNum "https://www.ebi.ac.uk/ena/browser/view/PRJEB51688"^^xsd:anyURI ;
-            schema:description "The EMO BON project"^^xsd:string ;
-            schema:name "EMOBON"^^xsd:string ] ;
-    emobon-core:broadBiome "marine%20biome%20%5BENVO:00000447%5D"^^xsd:anyURI ;
-    emobon-core:enaStudyAccNum "https://www.ebi.ac.uk/ena/browser/view/PRJEB64705"^^xsd:anyURI ;
-    emobon-core:geoLocation [ a sf:Point ;
-            geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point (56.916904 17.050178)" ] ;
-    emobon-core:hasMixsPackage "water"^^xsd:string ;
-    emobon-core:localBiome "marine%20water%20body%20%5BENVO:00001999%5D"^^xsd:anyURI ;
-    emobon-core:marineRegion "http://marineregions.org/mrgid/2401"^^xsd:anyURI,
-        "http://marineregions.org/mrgid/25678"^^xsd:anyURI ;
-    emobon-core:marineRegionName "Baltic Sea"^^xsd:string,
-        "Swedish part of the Baltic Sea"^^xsd:string ;
-    emobon-core:observatoryId "LMO"^^xsd:string ;
-    emobon-core:observatorySampleId "LMO Wa"^^xsd:string ;
-    emobon-core:originCountry "Sweden"^^xsd:string ;
-    emobon-core:sampleType core_vocab:water ;
-    emobon-core:siteInfo "At the LMO station we have been sampling (essentially twice monthly) for a diverse set of microbial evology variables since March 2011 (now at 361 sampling occasions). This includes measures of Bacterial abundance, Bacterial production, Inorganic nutrients and DOC, Chl a, phytoplankton composition (microscopy). We have also done 16S (all years) and 18S (several years) gene amplicon sequencing and metagenomics and metatranscriptomics analyses (5 years in total). Site has not participated in Ocean Sampling Day. Harmful algal blooms occur nearly every summer in the form of cyanobacterial blooms (especially Nodularia spumigena). There are three main periods of elevated Chl a: spring bloom in April (diatoms and dinoflagellates), summer bloom in July/August (cyanobacteria), and autumn bloom in Sept/Oct (diatoms). In the nearby coastal bays we investigate the influence of climate warming on microbial communities in water and sediments."^^xsd:string ;
-    emobon-core:waterColumnDepth [ a qudt:QuantityValue ;
-            qudt:numericValue 4.1e+01 ;
-            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> ] ;
-    schema:contactPoint [ a emobon-core:Organization ;
-            emobon-core:edmoId "https://edmo.seadatanet.org/report/4812"^^xsd:anyURI ;
-            schema:address [ a schema:PostalAddress ;
-                    schema:addressCountry "Sweden"^^xsd:string ;
-                    schema:member [ a schema:Person ;
-                            schema:email "Jarone.pinhassi@lnu.se"^^xsd:string ;
-                            schema:identifier "https://orcid.org/0000-0002-6405-1347"^^xsd:anyURI ;
-                            schema:name "Jarone Pinhassi"^^xsd:string ] ] ;
-            schema:legalName "Linnaeus University"^^xsd:string ] .
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 0e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 0e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 0e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 0e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.8e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 3.2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ],
+        [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.1e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ],
+        [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_1#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_1> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_1#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_1> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_1#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_1> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_10#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_10> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 2e-02 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_2#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_2> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_2#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_2> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_2#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_2> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_3#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_3> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_3#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_3> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_3#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_3> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_4#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_4> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_4#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_4> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_4#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_4> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_5#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_5> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_5#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_5> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_5#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_5> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_6#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_6> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_6#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_6> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_6#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_6> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_7#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_7> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_7#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_7> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_7#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_7> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_8#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_8> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 1.11e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_8#sea_surf_salinity> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_8> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 7.6e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_salinity"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Sal_Surface> ] ;
+    schema:measurementTechnique "Salinity is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_8#sea_surf_temp> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_8> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 6.5e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "sea_surf_temp"^^xsd:string ;
+            dct:identifier <https://data.emobon.embrc.eu/ns/observableproperty_vocab#Temp_Surface> ] ;
+    schema:measurementTechnique "Temperature is measured on-site using a SaltTestr11"^^xsd:string .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observation/EMOBON_LMO_Wa_9#chlorophyll> a csvw:Cell,
+        sosa:Observation,
+        schema:Observation ;
+    sosa:hasFeatureOfInterest <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_9> ;
+    sosa:hasResult [ a qudt:QuantityValue,
+                sosa:Result ;
+            qudt:numericValue 2e-02 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ] ;
+    sosa:observedProperty [ a sosa:ObservableProperty ;
+            rdfs:label "chlorophyll"^^xsd:string ;
+            dct:identifier <http://vocab.nerc.ac.uk/collection/S27/current/CS002896/> ] ;
+    schema:measurementTechnique "Protocol based on Jespersen, A. M., and K. Christoffersen.1987. Measurements of chlorophyll-a from phytoplankton using ethanol as extraction solvent."^^xsd:string .
 
 <file:///github/workspace/> a schema1:Dataset ;
     dct:conformsTo <https://data.emobon.embrc.eu/observatory-profile/latest> ;
     schema1:contactPoint <https://ror.org/0038zss60> ;
-    schema1:datePublished "2025-04-30T17:10:53+00:00" ;
+    schema1:datePublished "2025-05-08T13:50:11+00:00" ;
     schema1:description "This RO-Crate/GitHub repository contains the EMO BON sampling event logsheets from the observatory LMO" ;
     schema1:hasPart <file:///github/workspace/README.md>,
         <file:///github/workspace/all-triples.ttl>,
@@ -243,6 +809,39 @@
     schema1:keywords "http://purl.obolibrary.org/obo/ENVO_06105011",
         "https://rs.tdwg.org/terms/Event" .
 
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/observatory/LMO> a emobon-core:Observatory ;
+    dct:isPartOf [ a schema:Project ;
+            emobon-core:enaProjAccNum "https://www.ebi.ac.uk/ena/browser/view/PRJEB51688"^^xsd:anyURI ;
+            schema:description "The EMO BON project"^^xsd:string ;
+            schema:name "EMOBON"^^xsd:string ] ;
+    emobon-core:broadBiome "marine%20biome%20%5BENVO:00000447%5D"^^xsd:anyURI ;
+    emobon-core:enaStudyAccNum "https://www.ebi.ac.uk/ena/browser/view/PRJEB64705"^^xsd:anyURI ;
+    emobon-core:geoLocation [ a sf:Point ;
+            geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point (56.916904 17.050178)" ] ;
+    emobon-core:hasMixsPackage "water"^^xsd:string ;
+    emobon-core:localBiome "marine%20water%20body%20%5BENVO:00001999%5D"^^xsd:anyURI ;
+    emobon-core:marineRegion "http://marineregions.org/mrgid/2401"^^xsd:anyURI,
+        "http://marineregions.org/mrgid/25678"^^xsd:anyURI ;
+    emobon-core:marineRegionName "Baltic Sea"^^xsd:string,
+        "Swedish part of the Baltic Sea"^^xsd:string ;
+    emobon-core:observatoryId "LMO"^^xsd:string ;
+    emobon-core:observatorySampleId "LMO Wa"^^xsd:string ;
+    emobon-core:originCountry "Sweden"^^xsd:string ;
+    emobon-core:sampleType core_vocab:water ;
+    emobon-core:siteInfo "At the LMO station we have been sampling (essentially twice monthly) for a diverse set of microbial evology variables since March 2011 (now at 361 sampling occasions). This includes measures of Bacterial abundance, Bacterial production, Inorganic nutrients and DOC, Chl a, phytoplankton composition (microscopy). We have also done 16S (all years) and 18S (several years) gene amplicon sequencing and metagenomics and metatranscriptomics analyses (5 years in total). Site has not participated in Ocean Sampling Day. Harmful algal blooms occur nearly every summer in the form of cyanobacterial blooms (especially Nodularia spumigena). There are three main periods of elevated Chl a: spring bloom in April (diatoms and dinoflagellates), summer bloom in July/August (cyanobacteria), and autumn bloom in Sept/Oct (diatoms). In the nearby coastal bays we investigate the influence of climate warming on microbial communities in water and sediments."^^xsd:string ;
+    emobon-core:waterColumnDepth [ a qudt:QuantityValue ;
+            qudt:numericValue 4.1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> ] ;
+    schema:contactPoint [ a emobon-core:Organization ;
+            emobon-core:edmoId "https://edmo.seadatanet.org/report/4812"^^xsd:anyURI ;
+            schema:address [ a schema:PostalAddress ;
+                    schema:addressCountry "Sweden"^^xsd:string ;
+                    schema:member [ a schema:Person ;
+                            schema:email "Jarone.pinhassi@lnu.se"^^xsd:string ;
+                            schema:identifier "https://orcid.org/0000-0002-6405-1347"^^xsd:anyURI ;
+                            schema:name "Jarone Pinhassi"^^xsd:string ] ] ;
+            schema:legalName "Linnaeus University"^^xsd:string ] .
+
 <http://marineregions.org/mrgid/http://marineregions.org/mrgid/2401> mr:contains <http://marineregions.org/mrgid/> .
 
 <https://data.emobon.embrc.eu/observatory-profile/latest> a schema1:CreativeWork ;
@@ -251,7 +850,600 @@
 <https://ror.org/0038zss60> a schema1:ContactPoint ;
     schema1:email "emobon@embrc.eu" .
 
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_10> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 0.2-3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_10> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 7"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "MilliQ%20water%20%5BENVO:00003065%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "0.2-3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e-01 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut false ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 0.2um (Blank)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "blank_1"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=256318"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:blankSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_9> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_9> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 6"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "MilliQ%20water%20%5BENVO:00003065%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut false ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 3um (Blank)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "blank_1"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=256318"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "metagenome"^^xsd:string ;
+    schema:additionalType core_vocab:blankSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
 <http://marineregions.org/mrgid/http://marineregions.org/mrgid/25678> mr:contains <http://marineregions.org/mrgid/http://marineregions.org/mrgid/25678> ;
     mr:isPartOf <http://marineregions.org/mrgid/http://marineregions.org/mrgid/2401>,
         <http://marineregions.org/mrgid/http://marineregions.org/mrgid/25678> .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_1> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 3-200um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Storage of sample at HMBRC HQ"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2023-06-19"^^xsd:date ;
+            prov:wasInformedBy [ a prov:Activity ;
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ;
+                    dct:type "transport"^^xsd:string ;
+                    prov:endedAtTime "2023-06-19"^^xsd:date ;
+                    prov:startedAtTime "2023-06-12"^^xsd:date ;
+                    prov:wasInformedBy [ a prov:Activity ;
+                            dct:description "Local storage of the collected sample"^^xsd:string ;
+                            dct:type "storage"^^xsd:string ;
+                            prov:startedAtTime "2022-12-06"^^xsd:date ;
+                            prov:wasAssociatedWith [ a prov:Person,
+                                        schema:Person ;
+                                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+                            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_1> ;
+                            emobon-sampling:storageLoc "EEMiS lab 4041a, J.Pinhassi freezer"^^xsd:string ;
+                            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                                    qudt:numericValue -8e+01 ;
+                                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ] ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -7e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "3-200"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage false ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 3um (1)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "1"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+02 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_2> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 3-200um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Storage of sample at HMBRC HQ"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2023-06-19"^^xsd:date ;
+            prov:wasInformedBy [ a prov:Activity ;
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ;
+                    dct:type "transport"^^xsd:string ;
+                    prov:endedAtTime "2023-06-19"^^xsd:date ;
+                    prov:startedAtTime "2023-06-12"^^xsd:date ;
+                    prov:wasInformedBy [ a prov:Activity ;
+                            dct:description "Local storage of the collected sample"^^xsd:string ;
+                            dct:type "storage"^^xsd:string ;
+                            prov:startedAtTime "2022-12-06"^^xsd:date ;
+                            prov:wasAssociatedWith [ a prov:Person,
+                                        schema:Person ;
+                                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+                            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_2> ;
+                            emobon-sampling:storageLoc "EEMiS lab 4041a, J.Pinhassi freezer"^^xsd:string ;
+                            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                                    qudt:numericValue -8e+01 ;
+                                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ] ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -7e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "3-200"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage false ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 3um (2)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "2"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+02 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_3> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 3-200um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_3> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 6"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "3-200"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 3um (3)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "3"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+02 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_4> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 3-200um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_4> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 7"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "3-200"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 3um (4)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "4"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+02 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_5> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 0.2-3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Storage of sample at HMBRC HQ"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2023-06-19"^^xsd:date ;
+            prov:wasInformedBy [ a prov:Activity ;
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ;
+                    dct:type "transport"^^xsd:string ;
+                    prov:endedAtTime "2023-06-19"^^xsd:date ;
+                    prov:startedAtTime "2023-06-12"^^xsd:date ;
+                    prov:wasInformedBy [ a prov:Activity ;
+                            dct:description "Local storage of the collected sample"^^xsd:string ;
+                            dct:type "storage"^^xsd:string ;
+                            prov:startedAtTime "2022-12-06"^^xsd:date ;
+                            prov:wasAssociatedWith [ a prov:Person,
+                                        schema:Person ;
+                                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+                            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_5> ;
+                            emobon-sampling:storageLoc "EEMiS lab 4041a, J.Pinhassi freezer"^^xsd:string ;
+                            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                                    qudt:numericValue -8e+01 ;
+                                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ] ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -7e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "0.2-3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage false ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e-01 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 0.2um (1)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "1"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_6> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 0.2-3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Storage of sample at HMBRC HQ"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2023-06-19"^^xsd:date ;
+            prov:wasInformedBy [ a prov:Activity ;
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ;
+                    dct:type "transport"^^xsd:string ;
+                    prov:endedAtTime "2023-06-19"^^xsd:date ;
+                    prov:startedAtTime "2023-06-12"^^xsd:date ;
+                    prov:wasInformedBy [ a prov:Activity ;
+                            dct:description "Local storage of the collected sample"^^xsd:string ;
+                            dct:type "storage"^^xsd:string ;
+                            prov:startedAtTime "2022-12-06"^^xsd:date ;
+                            prov:wasAssociatedWith [ a prov:Person,
+                                        schema:Person ;
+                                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+                            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_6> ;
+                            emobon-sampling:storageLoc "EEMiS lab 4041a, J.Pinhassi freezer"^^xsd:string ;
+                            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                                    qudt:numericValue -8e+01 ;
+                                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ] ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -7e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "0.2-3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage false ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e-01 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 0.2um (2)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "2"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_7> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 0.2-3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_7> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 6"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "0.2-3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e-01 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 0.2um (3)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "3"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_8> a prov:Entity,
+        sosa:Sample ;
+    dct:description "EMOBON metagenome water sample from station LMO collected on 2022-12-06 size fraction 0.2-3um"^^xsd:string ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Camilla Karlsson"^^xsd:string ],
+        [ a prov:Person,
+                schema:Person ;
+            schema:name "Mellat Solomon; Sabina Arnautovic"^^xsd:string ] ;
+    prov:wasGeneratedBy [ a prov:Activity ;
+            dct:description "Local storage of the collected sample"^^xsd:string ;
+            dct:type "storage"^^xsd:string ;
+            prov:startedAtTime "2022-12-06"^^xsd:date ;
+            prov:wasAssociatedWith [ a prov:Person,
+                        schema:Person ;
+                    schema:name "Camilla Karlsson"^^xsd:string ] ;
+            prov:wasInformedBy <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sample/EMOBON_LMO_Wa_8> ;
+            emobon-sampling:storageLoc "Superfreezer room, basement, freezer 7"^^xsd:string ;
+            emobon-sampling:storageTemp [ a qudt:QuantityValue ;
+                    qudt:numericValue -8e+01 ;
+                    qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ] ] ;
+    sosa:isResultOf <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:failure true ;
+    emobon-sampling:filterSizeRange "0.2-3"^^xsd:string ;
+    emobon-sampling:filtrationTime [ a qudt:QuantityValue ;
+            qudt:numericValue "3"^^xsd:string ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UHOR/> ] ;
+    emobon-sampling:hasSampleSize [ a qudt:QuantityValue ;
+            qudt:numericValue 1e+01 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULIT/> ] ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:longStorage true ;
+    emobon-sampling:lowerFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 2e-01 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    emobon-sampling:membrCut true ;
+    emobon-sampling:origEmobonId "EMO BON LMO 361 Wa 221206 0.2um (4)"^^xsd:string ;
+    emobon-sampling:sampleReplicate "4"^^xsd:string ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:upperFilterSize [ a qudt:QuantityValue ;
+            qudt:numericValue 3e+00 ;
+            qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UXMM/> ] ;
+    schema:additionalType core_vocab:fieldSample,
+        "http://vocab.nerc.ac.uk/collection/S29/current/PE001525/"^^xsd:anyURI .
+
+<http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling-event/LMO_Wa_221206> a prov:Activity,
+        sosa:Sampling ;
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime "2022-12-06"^^xsd:date ;
+    prov:wasAssociatedWith [ a prov:Person,
+                schema:Person ;
+            schema:name "Yelena Churakova; Thomas Mollica"^^xsd:string ] ;
+    sosa:madeBySampler "Ruttner"^^xsd:string ;
+    sosa:resultTime "2022-12-06"^^xsd:date ;
+    sosa:usedProcedure [ a sosa:Procedure ;
+            rdfs:label "WaSOP 1"^^xsd:string ;
+            rdfs:comment "peristaltic pump"^^xsd:string ;
+            rdfs:seeAlso "http://dx.doi.org/10.25607/OBP-1653"^^xsd:anyURI ] ;
+    emobon-core:originCountry "Sweden"^^xsd:string ;
+    emobon-core:waterColumnDepth "41"^^xsd:string ;
+    emobon-sampling:bioCommunity ""^^xsd:string ;
+    emobon-sampling:environmentMaterial "seawater%20%5BENVO:00002149%5D"^^xsd:anyURI,
+        "surface%20water%20%5BENVO:00002042%5D"^^xsd:anyURI ;
+    emobon-sampling:investigationType "metagenome"^^xsd:string ;
+    emobon-sampling:linkedToObservatory <http://data.emobon.embrc.eu/observatory-lmo-crate/water/observatory/LMO> ;
+    emobon-sampling:maxSamplingDepth [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> ] ;
+    emobon-sampling:minSamplingDepth [ a qudt:QuantityValue ;
+            qudt:numericValue 2e+00 ;
+            qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/ULAA/> ] ;
+    emobon-sampling:taxonomicID "https://www.ncbi.nlm.nih.gov/taxonomy/browser/wwwtax.cgi?id=1874687"^^xsd:anyURI ;
+    emobon-sampling:taxonomicName "marine plankton metagenome"^^xsd:string ;
+    emobon-sampling:tidalStage "no_tide"^^xsd:string .
 
